@@ -11,6 +11,6 @@
 #import "Annotation.h"
 
 @implementation Annotation
-@synthesize coordinate, title, subtitle;
+@synthesize coordinate, title, subtitle, pinColor, desc;
 
 @end

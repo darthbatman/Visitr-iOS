@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    mapView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -115,6 +116,8 @@
             aHotel = [[Annotation alloc]init];
             aHotel.title = item.name;
             aHotel.coordinate = hotelCoordinate;
+            aHotel.pinColor = MKPinAnnotationColorPurple;
+            aHotel.desc = @"Hotel";
             
             [theHotels addObject:aHotel];
             [theHotelNames addObject:item.name];
@@ -156,6 +159,8 @@
             aRestaurant = [[Annotation alloc]init];
             aRestaurant.title = item.name;
             aRestaurant.coordinate = restaurantCoordinate;
+            aRestaurant.pinColor = MKPinAnnotationColorGreen;
+            aRestaurant.desc = @"Restaurant";
             
             [theRestaurants addObject:aRestaurant];
             [theRestaurantNames addObject:item.name];
@@ -193,6 +198,8 @@
             aPark = [[Annotation alloc]init];
             aPark.title = item.name;
             aPark.coordinate = parkCoordinate;
+            aPark.pinColor = MKPinAnnotationColorRed;
+            aPark.desc = @"Park";
             
             [theParks addObject:aPark];
             [theParkNames addObject:item.name];
@@ -230,15 +237,63 @@
             aMuseum = [[Annotation alloc]init];
             aMuseum.title = item.name;
             aMuseum.coordinate = museumCoordinate;
+            aMuseum.pinColor = MKPinAnnotationColorRed;
+            aMuseum.desc = @"Museum";
             
             [theMuseums addObject:aMuseum];
             [theMuseumNames addObject:item.name];
         }];
         [mapView addAnnotations:theMuseums];
-        [self.userDefaults setObject:theMuseumNames forKey:@"museumArray"];
+        [self.userDefaults setObject:theMuseumNames forKey:@"hotelArray"];
         [self.userDefaults synchronize];
     }];
     
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    
+    Annotation* at = (Annotation*)annotation;
+    MKPinAnnotationView *annot = [[MKPinAnnotationView alloc] init];
+    annot.pinColor = at.pinColor;
+    annot.animatesDrop = YES;
+    
+    // globalTitle = at.title;
+    
+    NSLog(@"dddd %@", at.title);
+    
+    UIButton *pinButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    pinButton.frame = CGRectMake(0, 0, 140, 28);
+    pinButton.tag = 10;
+    
+    
+  
+    NSLog(@"Method called.");
+    annot.canShowCallout = YES;
+    
+    
+    
+    if([at.desc isEqualToString:@"Museum"]) {
+        NSLog(@"museum detected");
+        
+        UIImage * image = [UIImage imageNamed:@"red_pin.jpg"];
+        //        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        //[myMapView addSubview:imageView];
+        
+        annot.image = image;
+    }
+    
+    else if([at.desc isEqualToString:@"Park"]) {
+        NSLog(@"parcc detected");
+        
+        UIImage * image = [UIImage imageNamed:@"red_pin.png"];
+        //        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        //[myMapView addSubview:imageView];
+        
+        annot.image = image;
+    }
+    
+    return annot;
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
