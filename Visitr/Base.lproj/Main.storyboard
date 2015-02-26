@@ -111,6 +111,15 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfw-oQ-aq0">
+                                        <rect key="frame" x="258" y="16" width="34" height="30"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="KeO-rp-236" eventType="touchUpInside" id="J5H-8q-duU"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings and Preferences" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6R-1v-BFM">
@@ -126,6 +135,9 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="poi1" destination="T01-C7-ckx" id="Ufj-E4-Pc9"/>
+                        <outlet property="poi2" destination="d6h-go-rHV" id="opP-IA-0td"/>
+                        <outlet property="restaurant" destination="FWD-Rd-eIl" id="9aS-Gk-D2H"/>
                         <outlet property="view" destination="BFc-Fh-CyQ" id="L7i-up-AUO"/>
                     </connections>
                 </viewController>

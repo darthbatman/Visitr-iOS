@@ -10,6 +10,12 @@
 
 @interface UserPref : UIViewController
 
+@property(weak, nonatomic) IBOutlet UITextField *poi1;
+
+@property(weak, nonatomic) IBOutlet UITextField *poi2;
+
+@property(weak, nonatomic) IBOutlet UITextField *restaurant;
+
 @end
 
 //@interface UserPref : UIViewController

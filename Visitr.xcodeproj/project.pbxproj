@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014B03A21A9D68BE0082739E /* UserPref.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B03A11A9D68BE0082739E /* UserPref.m */; };
 		7E91A7951A9A455600C8EB0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E91A7941A9A455600C8EB0E /* main.m */; };
 		7E91A7981A9A455600C8EB0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E91A7971A9A455600C8EB0E /* AppDelegate.m */; };
 		7E91A79B1A9A455600C8EB0E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E91A79A1A9A455600C8EB0E /* FirstViewController.m */; };
@@ -31,8 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01B09A691A9D616E00AB2BEB /* UserPref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPref.m; sourceTree = "<group>"; };
-		01B09A6A1A9D619500AB2BEB /* UserPref.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserPref.h; sourceTree = "<group>"; };
+		014B03A01A9D68BE0082739E /* UserPref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPref.h; sourceTree = "<group>"; };
+		014B03A11A9D68BE0082739E /* UserPref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPref.m; sourceTree = "<group>"; };
 		7E91A78F1A9A455600C8EB0E /* Visitr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Visitr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E91A7931A9A455600C8EB0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E91A7941A9A455600C8EB0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,8 +97,8 @@
 		7E91A7911A9A455600C8EB0E /* Visitr */ = {
 			isa = PBXGroup;
 			children = (
-				01B09A6A1A9D619500AB2BEB /* UserPref.h */,
-				01B09A691A9D616E00AB2BEB /* UserPref.m */,
+				014B03A01A9D68BE0082739E /* UserPref.h */,
+				014B03A11A9D68BE0082739E /* UserPref.m */,
 				7E91A7961A9A455600C8EB0E /* AppDelegate.h */,
 				7E91A7971A9A455600C8EB0E /* AppDelegate.m */,
 				7E91A7991A9A455600C8EB0E /* FirstViewController.h */,
@@ -244,6 +245,7 @@
 				7E91A7C11A9A462500C8EB0E /* Annotation.m in Sources */,
 				7E91A79E1A9A455600C8EB0E /* SecondViewController.m in Sources */,
 				7E91A7981A9A455600C8EB0E /* AppDelegate.m in Sources */,
+				014B03A21A9D68BE0082739E /* UserPref.m in Sources */,
 				7E91A79B1A9A455600C8EB0E /* FirstViewController.m in Sources */,
 				7E91A7951A9A455600C8EB0E /* main.m in Sources */,
 			);

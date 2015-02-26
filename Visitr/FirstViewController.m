@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "UserPref.h"
 #import "Annotation.h"
 
 @interface FirstViewController ()
@@ -87,7 +88,39 @@
     
     [mapView setRegion:region animated:YES];
     
+//    if the user sets no preference, use the default search queries
     
+    NSString *poi1Search;
+    NSString *poi2Search;
+    NSString *restaurantSearch;
+    
+    // gets the user defaults from UserSettings.m
+    NSUserDefaults *userSettings = [NSUserDefaults standardUserDefaults];
+    
+    poi1Search = [userSettings stringForKey:@"poi1"];
+    poi2Search = [userSettings stringForKey:@"poi2"];
+    restaurantSearch = [userSettings stringForKey:@"restamos"];
+    
+    NSLog(@"Contents of poi1Search - %@", poi1Search);
+    NSLog(@"Contents of poi2Search - %@", poi2Search);
+    NSLog(@"Contents of restaurantSearch - %@", restaurantSearch );
+    
+    if(poi1Search == nil) {
+        poi1Search = @"Museum";
+//        NSLog(@"poi1Search is nil");
+    }
+    
+    if(poi2Search == nil) {
+        poi2Search = @"Park";
+//        NSLog(@"poi2Search is nil");
+    }
+    
+    if(restaurantSearch == nil) {
+        restaurantSearch = @"Restaurant";
+//        NSLog(@"restaurantSearch is nil");
+    }
+    
+//    
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
     request.naturalLanguageQuery = @"Hotel";
     request.region = region;
@@ -131,8 +164,9 @@
         
     }];
     
+   
     
-    request.naturalLanguageQuery = @"Restaurant";
+    request.naturalLanguageQuery = restaurantSearch;
     request.region = region;
     
     MKLocalSearch *localSearch2 = [[MKLocalSearch alloc]initWithRequest:request];
@@ -171,7 +205,7 @@
     }];
     
     
-    request.naturalLanguageQuery = @"park";
+    request.naturalLanguageQuery = poi2Search;
     request.region = region;
     
     MKLocalSearch *localSearch3 = [[MKLocalSearch alloc]initWithRequest:request];
@@ -210,7 +244,7 @@
     }];
     
     
-    request.naturalLanguageQuery = @"museum";
+    request.naturalLanguageQuery = poi1Search;
     request.region = region;
     
     MKLocalSearch *localSearch4 = [[MKLocalSearch alloc]initWithRequest:request];
